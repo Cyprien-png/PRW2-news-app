@@ -20,6 +20,13 @@ class ArticleController extends Controller
         return view('articles.index', ['articles' => $articles->get()]);
     }
 
+    public function popular()
+    {
+        $articles = Article::unarchived()->orderBy('view_count', 'desc')->limit(5)->get();
+        
+        return view('articles.index', compact('articles'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -43,6 +50,7 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         Article::where('id', $article->id)->update(['view_count' => $article->view_count + 1]);
+
         return view('articles.show', compact('article'));
     }
 

@@ -15,5 +15,6 @@ use App\Http\Controllers\CommentController;
 |
 */
 
+Route::get('/', [ArticleController::class, 'popular']);
 Route::resource('articles', ArticleController::class);
 Route::resource('articles.comments', CommentController::class)->only(['store']);
