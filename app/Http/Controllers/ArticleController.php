@@ -49,9 +49,13 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         Article::where('id', $article->id)->update(['view_count' => $article->view_count + 1]);
-    
+
+        $heigestAuctionDate = null;
+        
         // return only the 'created_at' to avoid sensitive data leaks
-        $heigestAuctionDate = $article->auctions()->orderBy('value', 'desc')->first()->created_at;
+        $heigestAuction = $article->auctions()->orderBy('value', 'desc')->first();
+        if (!empty($heigestAuction))
+            $heigestAuctionDate = $heigestAuction->created_at;
         return view('articles.show', ['article' => $article, 'auction_date' => $heigestAuctionDate]);
     }
 

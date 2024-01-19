@@ -13,7 +13,11 @@
 <a href="{{ route('articles.edit', $article) }}">Modifier cet article</a>
 
 <h3>Enchères</h3>
+
+@unless (!$auction_date)
 <span>Meilleure enchère faite le {{ $auction_date }}</span>
+@endunless
+
 
 <form method="GET" action="{{ route('articles.auctions.create', $article) }}">
     <input type="submit" value="Enchérir sur l'article">
