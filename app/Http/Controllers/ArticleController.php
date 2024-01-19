@@ -23,7 +23,6 @@ class ArticleController extends Controller
     public function popular()
     {
         $articles = Article::unarchived()->orderBy('view_count', 'desc')->limit(5)->get();
-        
         return view('articles.index', compact('articles'));
     }
 
