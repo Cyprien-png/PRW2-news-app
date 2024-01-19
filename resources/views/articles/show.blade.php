@@ -11,6 +11,10 @@
         <input type="submit" value="Supprimer l'article">
     </form>
 
+    <form>
+        <input type="submit" value="Enchérir sur l'article">
+    </form>
+
     <a href="{{ route('articles.edit', $article) }}">Modifier cet article</a>
 
     <h3>Commentaires</h3>
