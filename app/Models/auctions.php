@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class auctions extends Model
+class Auctions extends Model
 {
     protected $fillable = ['value', 'email_address'];
 }
