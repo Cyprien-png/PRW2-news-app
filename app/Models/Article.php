@@ -16,7 +16,7 @@ class Article extends Model
 
     public function auctions()
     {
-        return $this->hasMany(Auctions::class);
+        return $this->hasMany(Auction::class);
     }
 
     public function scopeUnarchived(Builder $query)
