@@ -42,6 +42,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
+        Article::where('id', $article->id)->update(['view_count' => $article->view_count + 1]);
         return view('articles.show', compact('article'));
     }
 
