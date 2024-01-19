@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->float('value');
             $table->string('email_address');
+            $table->foreignId('article_id');
             $table->timestamps();
         });
     }
