@@ -11,7 +11,7 @@
         <input type="submit" value="Supprimer l'article">
     </form>
 
-    <form>
+    <form method="GET" action="{{ route('articles.auctions.create', $article) }}">
         <input type="submit" value="Enchérir sur l'article">
     </form>
 

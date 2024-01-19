@@ -1,10 +1,10 @@
 @extends('layout')
 
 @section('content')
-    <h1>Nouvel article</h1>
-    <form method="POST" action="{{ route('articles.store') }}">
+    <h1>Nouvelle enchère</h1>
+    <form method="POST" action="{{ route('articles.comments.store', $article) }}">
         @csrf
-        @include('articles.fields')
+        @include('auctions.fields')
         <input type="submit" value="Ajouter">
     </form>
 @endsection
